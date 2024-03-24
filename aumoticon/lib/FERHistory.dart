@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
+// import 'package:path_provider/path_provider.dart';
+// import 'package:sqflite/sqflite.dart';
+// import 'package:path/path.dart';
 import 'database_helper.dart';
 
 class FacialEmotionHistory extends StatefulWidget {
@@ -18,7 +18,6 @@ class _FacialEmotionHistoryState extends State<FacialEmotionHistory> {
     _historyData = DBHelper.getAllResults();
   }
 
-  // Function to map predicted emotions to emoji assets
   String getEmojiAsset(String emotion) {
     switch (emotion.toLowerCase()) {
       case 'happy':

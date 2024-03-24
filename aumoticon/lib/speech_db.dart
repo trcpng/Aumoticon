@@ -65,7 +65,6 @@ class SpeechDBHelper {
   }
 }
 
-
   static Future<List<String>> getSavedEmotions() async {
     final Database? db = await SERdatabase;
     List<Map<String, dynamic>> results = await db?.query('speech_recognition_result') ?? [];

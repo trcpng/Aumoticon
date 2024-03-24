@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart'; // Import the sqflite package
+import 'package:sqflite/sqflite.dart';
 import 'speech_db.dart';
 
 class SpeechEmotionHistory extends StatefulWidget {
@@ -9,22 +9,19 @@ class SpeechEmotionHistory extends StatefulWidget {
 
 class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
   late Future<List<Map<String, dynamic>>?> _emotionHistory;
-  late Database _database; // Database instance
+  late Database _database;
 
   @override
   void initState() {
     super.initState();
-    _initializeDatabase(); // Initialize your database
+    _initializeDatabase();
     _emotionHistory = SpeechDBHelper.getAllResults();
   }
 
-  // Initialize the database
   Future<void> _initializeDatabase() async {
-    _database = await openDatabase('speech_recognition_database.db'); // Initialize your database here
-    // Additional database initialization logic if needed
+    _database = await openDatabase('speech_recognition_database.db');
   }
 
-  // Function to map predicted emotions to altered emotions
   String alterPredictedEmotion(String emotion) {
     switch (emotion.toLowerCase()) {
       case 'disgust':
@@ -38,7 +35,6 @@ class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
     }
   }
 
-  // Function to get the text of the emotion
   String getEmotionText(String emotion) {
     switch (emotion.toLowerCase()) {
       case 'happy':
@@ -62,7 +58,6 @@ class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
     }
   }
 
-  // Function to map predicted emotions to emoji assets
   String getEmojisAsset(String emotion) {
     switch (emotion.toLowerCase()) {
       case 'happy':
@@ -82,13 +77,13 @@ class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
       case 'disgust':
         return 'assets/Emojis/emoangry.png';
       default:
-        return ''; // Return an empty string for unknown emotions
+        return '';
     }
   }
 
   @override
   void dispose() {
-    _database.close(); // Close the database connection when widget is disposed
+    _database.close();
     super.dispose();
   }
 
@@ -99,7 +94,7 @@ class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
         title: const Text('Speech Emotion History'),
         backgroundColor: const Color(0xFFF4E4B4),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -132,7 +127,7 @@ class _SpeechEmotionHistoryState extends State<SpeechEmotionHistory> {
                           width: 50,
                           height: 50,
                         )
-                      : const Text('No emoticon available'), // Display text for no emoticon
+                      : const Text('No emoticon available'),
                 );
               },
             );

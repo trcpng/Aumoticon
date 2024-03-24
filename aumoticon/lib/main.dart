@@ -8,12 +8,6 @@ void main() {
   runApp(MyApp());
 }
 
-// void main() {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   DatabaseHelper(); // Initialize the database helper
-//   runApp(MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 

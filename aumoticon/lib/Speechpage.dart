@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
-import 'speech_db.dart'; // Import the SpeechDBHelper class
+import 'speech_db.dart';
 
 class EmotionAnalysis extends StatefulWidget {
   const EmotionAnalysis({super.key});
@@ -297,7 +297,6 @@ class _EmotionAnalysisState extends State<EmotionAnalysis> {
  Future<void> showPredictedEmotionsDialog(BuildContext context) async {
   List<String> savedEmotions = await SpeechDBHelper.getSavedEmotions();
 
-  // Reverse the list of saved emotions
   savedEmotions = savedEmotions.reversed.toList();
 
   // ignore: use_build_context_synchronously
@@ -371,11 +370,10 @@ String getEmojisAsset(String emotion) {
     case 'disgust':
       return 'assets/Emojis/emoangry.png';
     default:
-      return ''; // Return an empty string for other emotions (no emoji)
+      return '';
   }
 }
 
-// Function to alter predicted emotions
 String alterPredictedEmotion(String emotion) {
   switch (emotion.toLowerCase()) {
     case 'disgust':
@@ -388,8 +386,6 @@ String alterPredictedEmotion(String emotion) {
       return emotion;
   }
 }
-
-
 
   String _getEmotionIntervention(String? emotion) {
     switch (emotion) {
@@ -426,7 +422,6 @@ String alterPredictedEmotion(String emotion) {
     'Calm': 'assets/Emojis/emoneutral.png',
   };
 
-  // Include this map in your class
   static const Map<String, String> emotionToBackgroundImagePath = {
     'Angry': 'assets/Results BG/bganger.png',
     'Fearful': 'assets/Results BG/bgfear.png',
@@ -437,15 +432,6 @@ String alterPredictedEmotion(String emotion) {
     'Surprised': 'assets/Results BG/bghappy.png',
     'Calm': 'assets/Results BG/bgneutral.png',
   };
-
-  // void showSavedEmotions() async {
-  //   List<String> savedEmotions = await SpeechDBHelper.getSavedEmotions();
-
-  //   print('Saved Emotions:');
-  //   for (String emotion in savedEmotions) {
-  //     print('- $emotion');
-  //   }
-  // }
 
   Future<void> showSavedEmotions() async {
   List<String> savedEmotions = await SpeechDBHelper.getSavedEmotions();

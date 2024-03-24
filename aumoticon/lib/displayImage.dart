@@ -187,7 +187,7 @@ class DisplaySnapshotScreen extends StatelessWidget {
       );
 
       if (result != -1) {
-        // Show a SnackBar notification when data is saved successfully
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('Saved!'),
@@ -209,7 +209,7 @@ class DisplaySnapshotScreen extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Saved History'),
+          title: const Text('Saved History'),
           content: Container(
             width: double.maxFinite,
             child: FutureBuilder(
@@ -249,7 +249,7 @@ class DisplaySnapshotScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Close'),
+              child: const Text('Close'),
             ),
           ],
         );
