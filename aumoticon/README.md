@@ -1,16 +1,11 @@
-# aumoticon
+# AUMOTICON - ASSISTIVE EMOTION RECOGNITION MOBILE APPLICATION USING CNN ALGORITHM INTENDED FOR INDIVIDUALS WITH AUTISM SPECTRUM DISORDER
+It helps users recognize and interpret facial emotions, enhancing their social interactions and emotional understanding.
 
-A new Flutter project.
+The main objective of this study is to recognize emotions through facial and speech detection to assist individuals with ASD.
+> Develop a mobile application that can detect and recognize human emotion in real-time, more specifically five (5) emotions, namely: happy, sad, fear, anger, and neutral.
+> Integrate a model using a CNN algorithm for the detection of human emotions through either facial recognition or audio recognition, specifically the voice tone.
+> Provide corresponding text-based interventions based on the human emotion detected.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Folders
+  /aumoticon - mobile app
+  /db - database
